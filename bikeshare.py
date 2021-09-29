@@ -10,14 +10,6 @@ MONTH_LIST = ['january', 'february', 'march', 'april', 'may', 'june']
 DAY_LIST = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday']
 
 def get_filters():
-    """
-    Asks user to specify a city, month, and day to analyze.
-
-    Returns:
-        (str) city - name of the city to analyze
-        (str) month - name of the month to filter by, or "all" to apply no month filter
-        (str) day - name of the day of week to filter by, or "all" to apply no day filter
-    """
     print('Hello! Let\'s explore some US bikeshare data!')
 
     while True:
@@ -48,16 +40,6 @@ def get_filters():
 
 
 def load_data(city, month, day):
-    """
-    Loads data for the specified city and filters by month and day if applicable.
-
-    Args:
-        (str) city - name of the city to analyze
-        (str) month - name of the month to filter by, or "all" to apply no month filter
-        (str) day - name of the day of week to filter by, or "all" to apply no day filter
-    Returns:
-        df - Pandas DataFrame containing city data filtered by month and day
-    """
     df = pd.read_csv(CITY_DATA[city])
 
     df['Start Time'] = pd.to_datetime(df['Start Time'])
@@ -74,8 +56,6 @@ def load_data(city, month, day):
     return df
 
 def time_stats(df):
-    """Displays statistics on the most frequent times of travel."""
-
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
@@ -98,8 +78,6 @@ def time_stats(df):
 
 
 def station_stats(df):
-    """Displays statistics on the most popular stations and trip."""
-
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
@@ -117,8 +95,6 @@ def station_stats(df):
 
 
 def trip_duration_stats(df):
-    """Displays statistics on the total and average trip duration."""
-
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
@@ -131,8 +107,6 @@ def trip_duration_stats(df):
 
 
 def user_stats(df):
-    """Displays statistics on bikeshare users."""
-
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
